@@ -4,6 +4,6 @@ This page corresponds to the article here
 
 ### Prerequisites
 
--`numpy`
--`scipy`
--`cv2`
+- `numpy`
+- `scipy`
+- `cv2`
