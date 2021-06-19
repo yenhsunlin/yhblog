@@ -161,6 +161,7 @@ def drawsim(disease_name,skip=None,dpi=150):
     else:
         raise ValueError('The input skip is not a positive integer, please check again')
     
+    start = timer()
     # drawing summary plot
     fig = plt.figure()
     plt.plot(info['Time']/24,info['Health'],label='health',c='limegreen')
@@ -199,9 +200,11 @@ def drawsim(disease_name,skip=None,dpi=150):
         img_array.append(str(s//skip+1)+'.png')
         print(str(s//skip+1)+' out of '+str(int(steps_label))+' are plotted',end='\r')
         sys.stdout.flush()
+    end = timer()
     # Save img info for later video making
     np.savetxt(str(disease_name)+'/images/imginfo.txt',np.asarray(img_array),fmt='%s')
-    print('Drawing process has completed!')
+    print('Drawing process has completed in '+str(np.round(end-start,2))+' seconds.\nLog file imginfo.txt saved!')
+
     
 def mkvideo(disease_name,fps=15):
     """
@@ -224,7 +227,7 @@ def mkvideo(disease_name,fps=15):
         height, width, layers = img.shape
         size = (width,height)
         img_array.append(img)
-    out = cv2.VideoWriter(str(disease_name)+'/video/animation.mp4',cv2.VideoWriter_fourcc(*'DIVX'), fps, size)
+    out = cv2.VideoWriter(str(disease_name)+'/video/'+str(disease_name)+'.mp4',cv2.VideoWriter_fourcc(*'DIVX'), fps, size)
     for i in range(len(img_array)):
         out.write(img_array[i])
     out.release()
