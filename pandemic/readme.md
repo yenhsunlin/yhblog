@@ -20,7 +20,9 @@ or
 
 Multiprocessing drawing function `drawsim_mp` is relatively efficient in drawing figures with small size simulation data, compared with its cousin `drawsim`. For size larger than 100 MB, please avoid using this function since it will not improve the speed but causes crashing issue.
 
-This is due to `multiprocessing.Pool` map the simulation data with the subroutine `_drawfullout` to each CPU core, for simulation file size is too large, it will consume huge amount of memory and causes the system unstable even crashed. Lowering the number of CPU core used in `drawsim_mp` will not fix this problem.
+This is due to `multiprocessing.Pool` map the simulation data with the subroutine `_drawfullout` to each CPU core, for simulation file size is too large, it will consume huge amount of memory and causes the system unstable even crashed. Lowering the number of CPU core used in `drawsim_mp` will not fix this problem. 
+
+I hope this memory issue will be fixed in the future by slicing the part of simulation data into each task when they are really needed.
 
 ## Change log
 
