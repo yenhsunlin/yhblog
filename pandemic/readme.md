@@ -10,11 +10,11 @@ This page corresponds to the article on my blog about the <a href='https://yenhs
 
 If python OpenCV (`cv2`) is not installed, the script cannot be run properly. Please do the following on the prompt
 
-> `conda install opencv`
+> `conda install --channel https://conda.anaconda.org/menpo opencv3`
 
 or
 
-> `pip install opencv`
+> `pip install opencv-python`
 
 ## Known issue
 
