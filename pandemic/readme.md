@@ -32,6 +32,7 @@ or
 - scipy 1.6.2
 - opencv-python 3.4.2
 - matplotlib 3.3.4
+- JupyterLab 3.0.14
 
 ## Known issue
 
