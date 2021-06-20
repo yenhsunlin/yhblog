@@ -2,6 +2,10 @@
 ## Description
 This page corresponds to the article on my blog about the <a href='https://yenhsunlin.github.io/2021/06/18/pandemic/'>*pandemic spreading*</a> .
 
+### Simulation method
+
+Markov chain Monte Carlo
+
 ### Data saving with various IDEs
 
 - *Jupyter*: commonly under the same directory as the notebook
