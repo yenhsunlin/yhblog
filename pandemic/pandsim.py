@@ -20,7 +20,7 @@ def PandemicSimulation(n_ill,n_health,
                        prange=[[-250,250],[-250,250]],vrange=[5,30],
                        box_size=[[-600,600],[-600,600]],dt=0.5,steps=24*30*2,
                        save_data=False,disease_name='ukn_disease',
-                       self_adaptive=False):
+                       self_adaptive=False,dpi=150):
     """
     This function runs the simulation of pandemic spreading with the given specs
     
@@ -102,13 +102,14 @@ def PandemicSimulation(n_ill,n_health,
     plt.title('Time evolving statistics of '+ str(disease_name))
     plt.xlabel('Days')
     plt.ylabel('Population')
+    plt.savefig(str(disease_name)+'/'+str(disease_name)+'_summary.png',dpi=dpi,bbox_inches='tight')
     
     return sub.statistic
 
 
 ################################################
 #                                              #
-#                 Standard IO                  #
+#                Standard I/O                  #
 #                                              #
 ################################################
 
@@ -162,21 +163,6 @@ def drawsim(disease_name,skip=None,dpi=150):
         raise ValueError('The input skip is not a positive integer, please check again')
     
     start = timer()
-    # drawing summary plot
-    fig = plt.figure()
-    plt.plot(info['Time']/24,info['Health'],label='health',c='limegreen')
-    plt.fill_between(info['Time']/24, info['Health'],color='limegreen',alpha=0.4)
-    plt.plot(info['Time']/24,info['Ill'],label='ill',c='orangered')
-    plt.fill_between(info['Time']/24,info['Ill'],color='orangered',alpha=0.4)
-    plt.plot(info['Time']/24,info['Recovered'],label='recovered',c='steelblue')
-    plt.fill_between(info['Time']/24, info['Recovered'],color='steelblue',alpha=0.4)
-    plt.plot(info['Time']/24,info['Dead'],label='dead',c='k')
-    plt.fill_between(info['Time']/24, info['Dead'],color='k',alpha=0.4)
-    plt.title('Time evolving statistics of '+str(disease_name))
-    plt.xlabel('Days')
-    plt.ylabel('Population')
-    plt.savefig(str(disease_name)+'/images/summary.png',dpi=dpi,bbox_inches='tight')
-    plt.close(fig)
 
     # drawing each step
     img_array =[]
@@ -274,7 +260,7 @@ def _self_adaptive_dt(dt,steps,vrange,r_inf,mask_protect):
         # unable to resolve, re-calculate dt and total steps
         new_dt = 0.5*r_inf/v_avg
         new_steps = int(tot_time/new_dt)+1
-        print('Self-adaptive dt is on, the new dt and steps are '+str(np.round(dt,3))+' and ' +str(steps)+'.')
+        print('Self-adaptive dt is on, the new dt and steps are '+str(np.round(new_dt,3))+' and ' +str(new_steps)+'.')
     else:
         # able to resolve, do nothing
         new_dt = dt
