@@ -1,6 +1,6 @@
 
 ## Description
-This page corresponds to the article on my blog about the <a href='https://yenhsunlin.github.io/2021/06/18/pandemic/'>pandemic spreading</a> .
+This page corresponds to the article on my blog about the <a href='https://yenhsunlin.github.io/2021/06/18/pandemic/'>*pandemic spreading*</a> .
 
 ### Data saving with various IDEs
 
