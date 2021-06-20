@@ -44,6 +44,12 @@ def PandemicSimulation(n_ill,n_health,
     ------
     dict: dictionary that stores the statistics 
     """
+    # Create project folder
+    if os.path.isdir(str(disease_name)):
+        pass
+    else:
+        os.mkdir(str(disease_name))
+    
     # Turn on self-adaptive adjustment on dt and steps?
     if self_adaptive:
         dt,steps = _self_adaptive_dt(dt,steps,vrange,inf_spec[0],mask_protect)
@@ -70,11 +76,6 @@ def PandemicSimulation(n_ill,n_health,
     
     def _save(disease_name,sim_out):
         # check if folder exists, if not, create one
-        if os.path.isdir(str(disease_name)):
-            pass
-        else:
-            os.mkdir(str(disease_name))
-        
         np.save(str(disease_name)+'/'+str(disease_name)+'_fullout.npy', sim_out.fullout)
         # Append the following to the summary dict
         summary = sim_out.statistic
@@ -86,9 +87,9 @@ def PandemicSimulation(n_ill,n_health,
         np.save(str(disease_name)+'/'+str(disease_name)+'_summary.npy', summary)
     
     if save_data:
-        _save(disease_name,sub)
-        print('Data saved.')
-    else: pass
+        _save(str(disease_name),sub)
+        print('Data and summary plot are saved.')
+    else: pass    
     
     # Plot statistics
     plt.plot(sub.statistic['Time']/24,sub.statistic['Health'],label='health',c='limegreen')
@@ -103,6 +104,7 @@ def PandemicSimulation(n_ill,n_health,
     plt.xlabel('Days')
     plt.ylabel('Population')
     plt.savefig(str(disease_name)+'/'+str(disease_name)+'_summary.png',dpi=dpi,bbox_inches='tight')
+    print('Summary plot saved.')
     
     return sub.statistic
 
