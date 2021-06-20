@@ -1,10 +1,10 @@
 
 ## Description
-This page corresponds to the article on my blog about the <a href='https://yenhsunlin.github.io/2021/06/18/pandemic/'>*pandemic spreading*</a> .
 
-### Simulation method
+This page corresponds to the article on my blog about the <a href='https://yenhsunlin.github.io/2021/06/18/pandemic/'>*pandemic spreading*</a>. The goal of this simulation is to simulate how a disease evolving with time with given conditions, eg. infection, recovery and death. With and without mask wearing is also quantified in the simulation.
 
-Markov chain Monte Carlo
+The method adopted in this project can be considered as non-interacting *N*-body simulation with MCMC probabilistic sampling. While non-interacting means no collisions between subjects when they encounter each other. Infection condition only depends on how close the healthy subject with the ill subject and the duration of the healthy subject stays in the infectious zone. See article (Chinese) for more detail.
+
 
 ### Data saving with various IDEs
 
