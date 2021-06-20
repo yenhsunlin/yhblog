@@ -2,10 +2,10 @@
 ## Description
 This page corresponds to the article on my blog about the <a href='https://yenhsunlin.github.io/2021/06/18/pandemic/'>pandemic spreading</a> .
 
-### Data saving with various IDE
+### Data saving with various IDEs
 
-- Jupyter Lab: under the same direction as the notebook file
-- Prompt: commonly under `~/`, depends on the OS setting
+- *Jupyter*: commonly under the same directory as the notebook
+- *Prompt*: commonly under `~/`, depends on the OS setting
 
 ## Prerequisites
 
