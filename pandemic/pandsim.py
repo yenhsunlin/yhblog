@@ -88,7 +88,7 @@ def PandemicSimulation(n_ill,n_health,
     
     if save_data:
         _save(str(disease_name),sub)
-        print('Data and summary plot are saved.')
+        print('Full simulation data saved.')
     else: pass    
     
     # Plot statistics
