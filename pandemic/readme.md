@@ -25,6 +25,14 @@ or
 
 > `pip install opencv-python`
 
+## Tested enviroment
+
+- Python 3.7.4
+- numpy 1.20.2
+- scipy 1.6.2
+- opencv-python 3.4.2
+- matplotlib 3.3.4
+
 ## Known issue
 
 ## Past issue
