@@ -37,5 +37,5 @@ This could be resolved in the next revision.
 
 ## Change log
 
-- 2021-06-20: Memory issue of multiprocessing support for drawing process fixed
+- 2021-06-20: Fixed memory issue of multiprocessing support for drawing process
 - 2021-06-20: Adding multiprocessing support for drawing process, the associated function is `drawsim_mp`
