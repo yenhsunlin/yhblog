@@ -4,10 +4,11 @@ This page corresponds to the article (in Chinese) on my blog about the *Monte Ca
 
 Note that when using GPU version `spinMH`, the outputs are cupy array instead of numpy array. To be compatible with other package such as `matplotlib`, you can convert them into numpy array by `cupy.asnumpy(arr)`.
 
-## Prerequisites for GPU version
+## Prerequisites
 
-- `numpy`
-- `cupy-cuda111`
+- `numpy` (both)
+- `scipy` (CPU)
+- `cupy-cuda111` (GPU)
 
 ## Tested enviroment
 
