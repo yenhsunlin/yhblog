@@ -1,6 +1,7 @@
 import numpy as np
 from scipy.signal import correlate2d
 
+
 gpu_flag = False
 
 def energy(state,j,h,window):
@@ -41,7 +42,10 @@ def MH_sampling(state,j,h,beta,window):
     ------
     state: 2D array, current spin configuration of the
         state, +1 for spin-up and -1 for spin-down
-    j: coupling constant between two atoms
+    j: coupling constant
+        positive is ferromagnetism
+        negative is anti-ferromagnetism
+        zero means no correlation
     h: spin tendency, contribution from external force
         positive means the spin aligning the ext. force
         negative means the spin anti-aligning the ext. force
@@ -100,7 +104,10 @@ def spinMH(size=[500,500],p0=[0.5,0.5],j=1,h=0,beta=1,iters=100,    \
     size: default [500,500] the size of the grid
     p0: default [0.5,0.5], the probability of spin is being
         up or down in the initial state, total cannot exceed 1
-    j: coupling constant between two atoms
+    j: coupling constant
+        positive is ferromagnetism
+        negative is anti-ferromagnetism
+        zero means no correlation
     h: spin tendency, contribution from external force
         positive means the spin aligning the ext. force
         negative means the spin anti-aligning the ext. force
