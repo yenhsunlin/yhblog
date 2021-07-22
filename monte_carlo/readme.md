@@ -1,6 +1,6 @@
 ## Description
 
-This page corresponds to the article (in Chinese) on my blog about the <a href='https://yenhsunlin.github.io/2021/07/21/mc/'>*Monte Carlo method*</a>. The notebook should provide enough explaination on the usage. I provided GPU version of the script named `ising_gpu.py`. To run this properly, an nvidia GPU card (with CUDA cores) is required. If you do want to run the GPU version, please uncomment the associated lines in the jupyter notebook and comment the CPU related lines (both cannot co-exist).
+This page corresponds to the article (in Chinese) on my blog about the <a href='https://yenhsunlin.github.io/2021/07/21/mc/'>*Monte Carlo method*</a>. The notebook should provide enough explaination on the usage. I provided GPU version of the script named `ising_gpu.py`. To run this properly, an nvidia GPU card (with CUDA cores) is required. If you do want to run the GPU version, please uncomment the associated lines in the notebook and comment the CPU related lines (both cannot co-exist).
 
 ## Prerequisites
 
